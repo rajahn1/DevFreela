@@ -1,0 +1,12 @@
+/home/rjahn/Dev/projects/Ecommerce/Domain/bin/Debug/net8.0/Domain.deps.json
+/home/rjahn/Dev/projects/Ecommerce/Domain/bin/Debug/net8.0/Domain.dll
+/home/rjahn/Dev/projects/Ecommerce/Domain/bin/Debug/net8.0/Domain.pdb
+/home/rjahn/Dev/projects/Ecommerce/Domain/obj/Debug/net8.0/Domain.csproj.AssemblyReference.cache
+/home/rjahn/Dev/projects/Ecommerce/Domain/obj/Debug/net8.0/Domain.GeneratedMSBuildEditorConfig.editorconfig
+/home/rjahn/Dev/projects/Ecommerce/Domain/obj/Debug/net8.0/Domain.AssemblyInfoInputs.cache
+/home/rjahn/Dev/projects/Ecommerce/Domain/obj/Debug/net8.0/Domain.AssemblyInfo.cs
+/home/rjahn/Dev/projects/Ecommerce/Domain/obj/Debug/net8.0/Domain.csproj.CoreCompileInputs.cache
+/home/rjahn/Dev/projects/Ecommerce/Domain/obj/Debug/net8.0/Domain.dll
+/home/rjahn/Dev/projects/Ecommerce/Domain/obj/Debug/net8.0/refint/Domain.dll
+/home/rjahn/Dev/projects/Ecommerce/Domain/obj/Debug/net8.0/Domain.pdb
+/home/rjahn/Dev/projects/Ecommerce/Domain/obj/Debug/net8.0/ref/Domain.dll
