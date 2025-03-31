@@ -4,20 +4,21 @@ namespace EcommerceAPI.Controllers;
 
 [ApiController]
 [Route("[controller]")]
-public class ProductController : ControllerBase
+public class ProductController(ILogger<ProductController> logger) : ControllerBase
 {
-    private readonly ILogger<ProductController> _logger;
+    private readonly ILogger<ProductController> _logger = logger;
     
+    /*
     public ProductController(ILogger<ProductController> logger)
     {
         _logger = logger;
     }
+    */
 
     [HttpGet]
-    public IEnumerable<Product> Get()
+    public IActionResult Get(string query)
     {
         var products = new List<Product>();
-        products.Add(new Product { Id = 1, Name = "Product 1", Description = "Product 1 description", Price = 28.30M }); 
-        return products;
+        return Ok();
     }
 }

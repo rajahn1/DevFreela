@@ -8,7 +8,52 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7a935c1e-b8f4-41cc-9b5c-026bdff78dda" name="Changes" comment="" />
+    <list default="true" id="7a935c1e-b8f4-41cc-9b5c-026bdff78dda" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Domain/Entities/Project.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Domain/Entities/ProjectComment.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Domain/Entities/Skill.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Domain/Entities/User.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Domain/Entities/UserSkill.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Domain/Enums/ProjectStatusEnum.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Domain/Exceptions/ProjectAlreadyStartedException.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Domain/Repositories/IProjectRepository.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Domain/Repositories/ISkillRepository.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Domain/Repositories/IUserRepository.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Infrastructure/CloudServices/IFileStorage.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Ecommerce/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Ecommerce/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Application.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Application.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DevFreela.API/Controllers/ProductController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DevFreela.API/Controllers/ProductController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DevFreela.API/bin/Debug/net8.0/DevFreela.API.dll" beforeDir="false" afterPath="$PROJECT_DIR$/DevFreela.API/bin/Debug/net8.0/DevFreela.API.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DevFreela.API/bin/Debug/net8.0/DevFreela.API.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/DevFreela.API/bin/Debug/net8.0/DevFreela.API.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DevFreela.API/bin/Debug/net8.0/Domain.dll" beforeDir="false" afterPath="$PROJECT_DIR$/DevFreela.API/bin/Debug/net8.0/Domain.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DevFreela.API/bin/Debug/net8.0/Domain.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/DevFreela.API/bin/Debug/net8.0/Domain.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DevFreela.API/obj/Debug/net8.0/DevFreela.API.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DevFreela.API/obj/Debug/net8.0/DevFreela.API.AssemblyInfo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DevFreela.API/obj/Debug/net8.0/DevFreela.API.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/DevFreela.API/obj/Debug/net8.0/DevFreela.API.AssemblyInfoInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DevFreela.API/obj/Debug/net8.0/DevFreela.API.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/DevFreela.API/obj/Debug/net8.0/DevFreela.API.csproj.AssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DevFreela.API/obj/Debug/net8.0/DevFreela.API.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/DevFreela.API/obj/Debug/net8.0/DevFreela.API.csproj.CoreCompileInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DevFreela.API/obj/Debug/net8.0/DevFreela.API.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/DevFreela.API/obj/Debug/net8.0/DevFreela.API.csproj.FileListAbsolute.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DevFreela.API/obj/Debug/net8.0/DevFreela.API.dll" beforeDir="false" afterPath="$PROJECT_DIR$/DevFreela.API/obj/Debug/net8.0/DevFreela.API.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DevFreela.API/obj/Debug/net8.0/DevFreela.API.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/DevFreela.API/obj/Debug/net8.0/DevFreela.API.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DevFreela.API/obj/Debug/net8.0/ref/DevFreela.API.dll" beforeDir="false" afterPath="$PROJECT_DIR$/DevFreela.API/obj/Debug/net8.0/ref/DevFreela.API.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DevFreela.API/obj/Debug/net8.0/refint/DevFreela.API.dll" beforeDir="false" afterPath="$PROJECT_DIR$/DevFreela.API/obj/Debug/net8.0/refint/DevFreela.API.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Domain/Domain.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/Domain.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Domain/Entities/BaseEntity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/Entities/BaseEntity.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Domain/Entities/Category.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/Entities/Category.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Domain/bin/Debug/net8.0/Domain.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/bin/Debug/net8.0/Domain.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Domain/bin/Debug/net8.0/Domain.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/bin/Debug/net8.0/Domain.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Domain/obj/Debug/net8.0/Domain.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/obj/Debug/net8.0/Domain.AssemblyInfo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Domain/obj/Debug/net8.0/Domain.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/obj/Debug/net8.0/Domain.AssemblyInfoInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Domain/obj/Debug/net8.0/Domain.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/obj/Debug/net8.0/Domain.csproj.CoreCompileInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Domain/obj/Debug/net8.0/Domain.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/obj/Debug/net8.0/Domain.csproj.FileListAbsolute.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Domain/obj/Debug/net8.0/Domain.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/obj/Debug/net8.0/Domain.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Domain/obj/Debug/net8.0/Domain.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/obj/Debug/net8.0/Domain.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Domain/obj/Debug/net8.0/ref/Domain.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/obj/Debug/net8.0/ref/Domain.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Domain/obj/Debug/net8.0/refint/Domain.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/obj/Debug/net8.0/refint/Domain.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infrastructure/Data/EcommerceDbContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/Persistence/DevFreelaDbContext.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infrastructure/Infrastructure.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/Infrastructure.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infrastructure/Repository/CategoryRepository.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infrastructure/Repository/ProductRepository.cs" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -16,6 +61,9 @@
   </component>
   <component name="DpaMonitoringSettings">
     <option name="firstShow" value="false" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/DevFreela.API/Controllers/ProductController.cs" root0="FORCE_HIGHLIGHTING" />
@@ -35,6 +83,7 @@
   &quot;keyToString&quot;: {
     &quot;.NET Launch Settings Profile.Ecommerce: http.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -85,7 +134,7 @@
       <updated>1743124141331</updated>
       <workItem from="1743124142555" duration="6090000" />
       <workItem from="1743218372586" duration="1404000" />
-      <workItem from="1743359373787" duration="1927000" />
+      <workItem from="1743359373787" duration="9338000" />
     </task>
     <servers />
   </component>

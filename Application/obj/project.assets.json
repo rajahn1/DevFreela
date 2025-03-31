@@ -299,6 +299,21 @@
         "runtime": {
           "bin/placeholder/Domain.dll": {}
         }
+      },
+      "Infrastructure/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "Domain": "1.0.0",
+          "Microsoft.EntityFrameworkCore": "9.0.3",
+          "Pomelo.EntityFrameworkCore.MySql": "8.0.3"
+        },
+        "compile": {
+          "bin/placeholder/Infrastructure.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Infrastructure.dll": {}
+        }
       }
     }
   },
@@ -763,11 +778,17 @@
       "type": "project",
       "path": "../Domain/Domain.csproj",
       "msbuildProject": "../Domain/Domain.csproj"
+    },
+    "Infrastructure/1.0.0": {
+      "type": "project",
+      "path": "../Infrastructure/Infrastructure.csproj",
+      "msbuildProject": "../Infrastructure/Infrastructure.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net8.0": [
       "Domain >= 1.0.0",
+      "Infrastructure >= 1.0.0",
       "Microsoft.EntityFrameworkCore >= 9.0.3",
       "Pomelo.EntityFrameworkCore.MySql >= 8.0.3"
     ]
@@ -799,6 +820,9 @@
           "projectReferences": {
             "/home/rjahn/Dev/projects/Ecommerce/Domain/Domain.csproj": {
               "projectPath": "/home/rjahn/Dev/projects/Ecommerce/Domain/Domain.csproj"
+            },
+            "/home/rjahn/Dev/projects/Ecommerce/Infrastructure/Infrastructure.csproj": {
+              "projectPath": "/home/rjahn/Dev/projects/Ecommerce/Infrastructure/Infrastructure.csproj"
             }
           }
         }
