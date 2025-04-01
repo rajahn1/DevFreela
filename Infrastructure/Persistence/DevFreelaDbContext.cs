@@ -1,6 +1,5 @@
 using Domain.Entities;
 using Microsoft.EntityFrameworkCore;
-
 namespace Infrastructure.Persistence;
 
 public class DevFreelaDbContext: DbContext
@@ -9,9 +8,9 @@ public class DevFreelaDbContext: DbContext
     {
         Projects = new List<Project>
         {
-            new Project("Angular com C#", "projeto teste lorem", 11900),
-            new Project("React com Tailwind", "lorem ipsum dolorers", 19032),
-            new Project("Next com Vanilla", "avada kedavra", 1129)
+            new Project("Angular com C#", "projeto teste lorem", 11900, 1, 1),
+            new Project("React com Tailwind", "lorem ipsum dolorers", 19032, 2, 2),
+            new Project("Next com Vanilla", "avada kedavra", 1129, 2,2)
         };
 
         Users = new List<User>
@@ -33,4 +32,6 @@ public class DevFreelaDbContext: DbContext
     public List<Project>Projects { get; set; }
     public List<User>Users { get; set; }
     public List<Skill>Skills { get; set; }
+    
+    public List<ProjectComment> ProjectComments { get; set; }
 }
