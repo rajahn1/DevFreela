@@ -8,7 +8,9 @@
     ".NETCoreApp,Version=v8.0": {
       "DevFreela.API/1.0.0": {
         "dependencies": {
+          "Application": "1.0.0",
           "Domain": "1.0.0",
+          "Infrastructure": "1.0.0",
           "Microsoft.EntityFrameworkCore": "9.0.3",
           "Pomelo.EntityFrameworkCore.MySql": "8.0.3",
           "Swashbuckle.AspNetCore": "6.6.2"
@@ -225,6 +227,17 @@
           }
         }
       },
+      "Application/1.0.0": {
+        "dependencies": {
+          "Domain": "1.0.0",
+          "Infrastructure": "1.0.0",
+          "Microsoft.EntityFrameworkCore": "9.0.3",
+          "Pomelo.EntityFrameworkCore.MySql": "8.0.3"
+        },
+        "runtime": {
+          "Application.dll": {}
+        }
+      },
       "Domain/1.0.0": {
         "dependencies": {
           "Microsoft.EntityFrameworkCore": "9.0.3",
@@ -232,6 +245,16 @@
         },
         "runtime": {
           "Domain.dll": {}
+        }
+      },
+      "Infrastructure/1.0.0": {
+        "dependencies": {
+          "Domain": "1.0.0",
+          "Microsoft.EntityFrameworkCore": "9.0.3",
+          "Pomelo.EntityFrameworkCore.MySql": "8.0.3"
+        },
+        "runtime": {
+          "Infrastructure.dll": {}
         }
       }
     }
@@ -396,7 +419,17 @@
       "path": "system.diagnostics.diagnosticsource/9.0.3",
       "hashPath": "system.diagnostics.diagnosticsource.9.0.3.nupkg.sha512"
     },
+    "Application/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
     "Domain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Infrastructure/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

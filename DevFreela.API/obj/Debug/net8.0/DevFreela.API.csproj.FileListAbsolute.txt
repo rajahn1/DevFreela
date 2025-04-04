@@ -47,3 +47,7 @@
 /home/rjahn/Dev/projects/Ecommerce/DevFreela.API/obj/Debug/net8.0/DevFreela.API.genruntimeconfig.cache
 /home/rjahn/Dev/projects/Ecommerce/DevFreela.API/obj/Debug/net8.0/ref/DevFreela.API.dll
 /home/rjahn/Dev/projects/Ecommerce/DevFreela.API/obj/Debug/net8.0/DevFreela.API.sourcelink.json
+/home/rjahn/dev/projects/Ecommerce/DevFreela.API/bin/Debug/net8.0/Application.dll
+/home/rjahn/dev/projects/Ecommerce/DevFreela.API/bin/Debug/net8.0/Infrastructure.dll
+/home/rjahn/dev/projects/Ecommerce/DevFreela.API/bin/Debug/net8.0/Application.pdb
+/home/rjahn/dev/projects/Ecommerce/DevFreela.API/bin/Debug/net8.0/Infrastructure.pdb

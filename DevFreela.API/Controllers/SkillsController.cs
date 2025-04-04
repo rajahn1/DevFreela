@@ -2,11 +2,11 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace EcommerceAPI.Controllers;
 
-public class UserController : ControllerBase
+public class SkillsController : Controller
 {
     // GET
     public IActionResult Index()
     {
-        return Ok();
+        return View();
     }
 }

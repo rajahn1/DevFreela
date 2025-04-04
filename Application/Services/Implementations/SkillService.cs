@@ -1,33 +1,47 @@
 using Application.InputModels.Skill;
 using Application.Services.Interfaces;
 using Application.ViewModels.Skill;
+using Domain.Entities;
+using Infrastructure.Persistence;
+using Microsoft.EntityFrameworkCore;
 
 namespace Application.Services.Implementations;
 
-public class SkillService : ISkillService
+public class SkillService(DevFreelaDbContext dbContext) : ISkillService
 {
-    public List<SkillViewModel> GetSkills()
+    private readonly DevFreelaDbContext _dbContext =  dbContext;
+    public List<SkillViewModel> GetAll()
     {
-        throw new NotImplementedException();
+        var skills = _dbContext.Skills;
+        return skills.Select(s => new SkillViewModel(s.Description, s.Id)).ToList();
     }
 
     public SkillDetailsViewModel GetSkillById(int id)
     {
-        throw new NotImplementedException();
+        var skill = _dbContext.Skills.FirstOrDefault(s => s.Id == id);
+        if (skill == null) throw new KeyNotFoundException(); 
+        return new SkillDetailsViewModel(skill.Description, skill.Id);
     }
 
     public void Delete(int id)
     {
-        throw new NotImplementedException();
+        var skill = _dbContext.Skills.FirstOrDefault(s => s.Id == id);
+        if (skill == null) throw new KeyNotFoundException(); 
+        _dbContext.Skills.Remove(skill);
     }
 
     public void Update(UpdateSkillInputModel model)
     {
-        throw new NotImplementedException();
+        var skill = _dbContext.Skills.FirstOrDefault(s => s.Id == model.Id);
+        if (skill == null) throw new KeyNotFoundException(); 
+        skill.Update(model.Id, model.Description);
+        _dbContext.Update(skill);
     }
 
     public int Create(CreateSkillInputModel model)
     {
-        throw new NotImplementedException();
+        Skill skill = new (model.Description);
+        _dbContext.Skills.Add(skill);
+        return skill.Id;
     }
 }

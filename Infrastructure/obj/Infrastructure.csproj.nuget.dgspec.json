@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/home/rjahn/Dev/projects/Ecommerce/Infrastructure/Infrastructure.csproj": {}
+    "/home/rjahn/dev/projects/Ecommerce/Infrastructure/Infrastructure.csproj": {}
   },
   "projects": {
-    "/home/rjahn/Dev/projects/Ecommerce/Domain/Domain.csproj": {
+    "/home/rjahn/dev/projects/Ecommerce/Domain/Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/rjahn/Dev/projects/Ecommerce/Domain/Domain.csproj",
+        "projectUniqueName": "/home/rjahn/dev/projects/Ecommerce/Domain/Domain.csproj",
         "projectName": "Domain",
-        "projectPath": "/home/rjahn/Dev/projects/Ecommerce/Domain/Domain.csproj",
+        "projectPath": "/home/rjahn/dev/projects/Ecommerce/Domain/Domain.csproj",
         "packagesPath": "/home/rjahn/.nuget/packages/",
-        "outputPath": "/home/rjahn/Dev/projects/Ecommerce/Domain/obj/",
+        "outputPath": "/home/rjahn/dev/projects/Ecommerce/Domain/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/rjahn/.nuget/NuGet/NuGet.Config"
@@ -67,14 +67,14 @@
         }
       }
     },
-    "/home/rjahn/Dev/projects/Ecommerce/Infrastructure/Infrastructure.csproj": {
+    "/home/rjahn/dev/projects/Ecommerce/Infrastructure/Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/rjahn/Dev/projects/Ecommerce/Infrastructure/Infrastructure.csproj",
+        "projectUniqueName": "/home/rjahn/dev/projects/Ecommerce/Infrastructure/Infrastructure.csproj",
         "projectName": "Infrastructure",
-        "projectPath": "/home/rjahn/Dev/projects/Ecommerce/Infrastructure/Infrastructure.csproj",
+        "projectPath": "/home/rjahn/dev/projects/Ecommerce/Infrastructure/Infrastructure.csproj",
         "packagesPath": "/home/rjahn/.nuget/packages/",
-        "outputPath": "/home/rjahn/Dev/projects/Ecommerce/Infrastructure/obj/",
+        "outputPath": "/home/rjahn/dev/projects/Ecommerce/Infrastructure/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/rjahn/.nuget/NuGet/NuGet.Config"
@@ -89,8 +89,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "/home/rjahn/Dev/projects/Ecommerce/Domain/Domain.csproj": {
-                "projectPath": "/home/rjahn/Dev/projects/Ecommerce/Domain/Domain.csproj"
+              "/home/rjahn/dev/projects/Ecommerce/Domain/Domain.csproj": {
+                "projectPath": "/home/rjahn/dev/projects/Ecommerce/Domain/Domain.csproj"
               }
             }
           }

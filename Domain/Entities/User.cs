@@ -10,4 +10,9 @@ public class User(string fullName, string email, DateTime birthDate) : BaseEntit
     public List<Project> OwnedProjects { get; private set; } = [];
     public List<Project> FreelanceProjects { get; private set; } = [];
 
+    public void Update(string fullname, bool active)
+    {
+        FullName = fullname;
+        Active = active;
+    }
 }

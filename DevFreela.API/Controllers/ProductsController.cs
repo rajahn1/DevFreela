@@ -4,9 +4,9 @@ namespace EcommerceAPI.Controllers;
 
 [ApiController]
 [Route("[controller]")]
-public class ProductController(ILogger<ProductController> logger) : ControllerBase
+public class ProductsController(ILogger<ProductsController> logger) : ControllerBase
 {
-    private readonly ILogger<ProductController> _logger = logger;
+    private readonly ILogger<ProductsController> _logger = logger;
     
     /*
     public ProductController(ILogger<ProductController> logger)

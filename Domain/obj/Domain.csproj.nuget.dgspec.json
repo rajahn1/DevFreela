@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/home/rjahn/Dev/projects/Ecommerce/Domain/Domain.csproj": {}
+    "/home/rjahn/dev/projects/Ecommerce/Domain/Domain.csproj": {}
   },
   "projects": {
-    "/home/rjahn/Dev/projects/Ecommerce/Domain/Domain.csproj": {
+    "/home/rjahn/dev/projects/Ecommerce/Domain/Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/rjahn/Dev/projects/Ecommerce/Domain/Domain.csproj",
+        "projectUniqueName": "/home/rjahn/dev/projects/Ecommerce/Domain/Domain.csproj",
         "projectName": "Domain",
-        "projectPath": "/home/rjahn/Dev/projects/Ecommerce/Domain/Domain.csproj",
+        "projectPath": "/home/rjahn/dev/projects/Ecommerce/Domain/Domain.csproj",
         "packagesPath": "/home/rjahn/.nuget/packages/",
-        "outputPath": "/home/rjahn/Dev/projects/Ecommerce/Domain/obj/",
+        "outputPath": "/home/rjahn/dev/projects/Ecommerce/Domain/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/rjahn/.nuget/NuGet/NuGet.Config"

@@ -13,13 +13,14 @@ public class ProjectService(DevFreelaDbContext dbContext): IProjectService
     public List<ProjectViewModel> GetAllProjects(string query)
     {
         var projects = _dbContext.Projects;
-        var projectsViewModel = projects.Select(p => new ProjectViewModel(p.Title, p.CreatedAt)).ToList();
+        var projectsViewModel = projects.Select(p => new ProjectViewModel(p.Id, p.Title, p.CreatedAt)).ToList();
         return projectsViewModel;
     }
 
     public ProjectDetailsViewModel GetProjectById(int id)
     { 
         var project = _dbContext.Projects.FirstOrDefault(p => p.Id == id);
+        if (project == null) return null;
         var projectViewModel = new ProjectDetailsViewModel(
             project.Id, 
             project.Description,

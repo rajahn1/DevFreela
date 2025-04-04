@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "bjg0xWEJLfM=",
+  "dgSpecHash": "Dmx81JNbw1k=",
   "success": true,
-  "projectFilePath": "/home/rjahn/Dev/projects/Ecommerce/Infrastructure/Infrastructure.csproj",
+  "projectFilePath": "/home/rjahn/dev/projects/Ecommerce/Infrastructure/Infrastructure.csproj",
   "expectedPackageFiles": [
     "/home/rjahn/.nuget/packages/microsoft.entityframeworkcore/9.0.3/microsoft.entityframeworkcore.9.0.3.nupkg.sha512",
     "/home/rjahn/.nuget/packages/microsoft.entityframeworkcore.abstractions/9.0.3/microsoft.entityframeworkcore.abstractions.9.0.3.nupkg.sha512",

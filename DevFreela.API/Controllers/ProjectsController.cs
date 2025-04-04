@@ -1,57 +1,80 @@
+using Application.InputModels;
+using Application.Services.Interfaces;
 using Domain.Entities;
 using Microsoft.AspNetCore.Mvc;
 
 namespace EcommerceAPI.Controllers;
 
 [ApiController]
-[Route("[controller]")]
-public class ProjectsController : ControllerBase
+[Route("api/projects")]
+public class ProjectsController(IProjectService projectService) : ControllerBase
 {
+    private readonly IProjectService _projectService = projectService;
     [HttpGet]
     public IActionResult Get(string query)
     {
-        return Ok(query);
+        var projects = _projectService.GetAllProjects(query); 
+        return Ok(projects);
     }
 
     [HttpGet("{id}")]
     public IActionResult GetById(int id)
     {
-        return Ok(id);
+        var project = _projectService.GetProjectById(id);
+        if (project == null)
+        {
+            return NotFound();
+        }
+        return Ok(project);
     }
 
     [HttpPost]
-    public IActionResult Post([FromBody] Project project)
+    public IActionResult Post([FromBody] NewProjectInputModel model)
     {
-        return Ok();
+        if (model.Description.Length > 200)
+        {
+            return BadRequest();
+        }
+        var id = _projectService.Create(model);
+
+        return CreatedAtAction(nameof(GetById), new { id = id }, model);
     }
 
     [HttpPut]
-    public IActionResult Put([FromBody] Project project)
+    public IActionResult Put([FromBody] UpdateProjectInputModel model)
     {
-        return Ok();
+        if (model.Description.Length > 200)
+        {
+            return BadRequest();
+        }
+        _projectService.Update(model);
+        return Ok(model.Id);
     }
     
     [HttpDelete("{id}")]
-    public IActionResult Delete()
+    public IActionResult Delete(int id)
     {
-        return Ok();
+        _projectService.Delete(id);
+        return NoContent();
     }
 
     [HttpPut("{id}/start")]
     public IActionResult Start(int id)
     {
+        _projectService.Start(id);
         return NoContent();
     }
-    [HttpPut("{id}/finish")]
+    [HttpPut("{id}/finish")]:
     public IActionResult Finish(int id)
     {
+        _projectService.Finish(id);
         return NoContent();
     }
 
     [HttpPost("{id}/comments")]
-    public IActionResult CreateComment()
+    public IActionResult CreateComment(int id, CreateCommentInputModel model)
     {
-        return Ok();  
-    }
-    
+        _projectService.CreateComment(model);
+        return NoContent();
+    } 
 }
