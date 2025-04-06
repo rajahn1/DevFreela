@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace EcommerceAPI.Controllers;
 
 [ApiController]
-[Route("api/projects")]
+[Route("api/[controller]")]
 public class ProjectsController(IProjectService projectService) : ControllerBase
 {
     private readonly IProjectService _projectService = projectService;
@@ -64,7 +64,7 @@ public class ProjectsController(IProjectService projectService) : ControllerBase
         _projectService.Start(id);
         return NoContent();
     }
-    [HttpPut("{id}/finish")]:
+    [HttpPut("{id}/finish")]
     public IActionResult Finish(int id)
     {
         _projectService.Finish(id);
