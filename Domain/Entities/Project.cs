@@ -1,3 +1,4 @@
+using System.ComponentModel.DataAnnotations.Schema;
 using Domain.Enums;
 
 namespace Domain.Entities;
@@ -6,7 +7,11 @@ public class Project(string title, string description, decimal totalCost, int id
 {
     public string Title { get; private set; } = title;
     public string Description { get; private set; } = description;
+    public User Client { get; private set; }
+    [ForeignKey("IdClient")]
     public int IdClient { get; private set; } = idClient;
+    public User Freelancer { get; private set; }
+    [ForeignKey("IdFreelancer")]
     public int IdFreelancer { get; private set; } = idFreelancer;
     public decimal TotalCost { get; private set; } = totalCost;
     public DateTime? StartedAt { get; private set; }

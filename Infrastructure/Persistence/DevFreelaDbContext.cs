@@ -2,36 +2,46 @@ using Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 namespace Infrastructure.Persistence;
 
-public class DevFreelaDbContext: DbContext
+public class DevFreelaDbContext(DbContextOptions<DevFreelaDbContext> options) : DbContext(options)
 {
-    public DevFreelaDbContext()
+    public DbSet<Project>Projects { get; set; }
+    public DbSet<User>Users { get; set; }
+    public DbSet<Skill>Skills { get; set; }
+    
+    public DbSet<UserSkill> UserSkills { get; set; }
+    public DbSet<ProjectComment> ProjectComments { get; set; }
+    protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-        Projects = new List<Project>
-        {
-            new Project("Angular com C#", "projeto teste lorem", 11900, 1, 1),
-            new Project("React com Tailwind", "lorem ipsum dolorers", 19032, 2, 2),
-            new Project("Next com Vanilla", "avada kedavra", 1129, 2,2)
-        };
+        base.OnModelCreating(modelBuilder);
+        modelBuilder.Entity<Category>()
+            .HasKey(c => c.Id);
+        modelBuilder.Entity<Project>()
+            .HasKey(p => p.Id);
+        modelBuilder.Entity<Project>()
+            .HasOne(p => p.Freelancer)
+            .WithMany(f => f.FreelanceProjects)
+            .HasForeignKey(p => p.IdFreelancer)
+            .OnDelete(DeleteBehavior.Restrict);
+        
+        modelBuilder.Entity<Project>()
+            .HasOne(p => p.Client)
+            .WithMany(f => f.OwnedProjects)
+            .HasForeignKey(p => p.IdClient)
+            .OnDelete(DeleteBehavior.Restrict);
+            
+        modelBuilder.Entity<ProjectComment>()
+            .HasKey(p => p.Id);
+        modelBuilder.Entity<Skill>()
+            .HasKey(p => p.Id);;
+        
+        modelBuilder.Entity<User>()
+            .HasKey(p => p.Id);;
 
-        Users = new List<User>
-        {
-            new User("Rafael Felipe", "rafayuno@gmail.com", new DateTime(2001, 9, 1)),
-            new User("Daniel Felipe", "dani@gmail.com", new DateTime(2000, 4, 24)),
-            new User("Cassiano Felipe", "cassi@gmail.com", new DateTime(1998, 8, 28))
-        };
-
-        Skills = new List<Skill>
-        {
-            new Skill("C#"),
-            new Skill("SQL"),
-            new Skill("Javascript")
-        };
+        modelBuilder.Entity<User>()
+            .HasMany(u => u.Skills)
+            .WithOne();
+        
+        modelBuilder.Entity<UserSkill>()
+            .HasKey(p => p.Id);;
     }
-    
-    
-    public List<Project>Projects { get; set; }
-    public List<User>Users { get; set; }
-    public List<Skill>Skills { get; set; }
-    
-    public List<ProjectComment> ProjectComments { get; set; }
 }

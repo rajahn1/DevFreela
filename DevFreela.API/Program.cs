@@ -1,6 +1,7 @@
 using Application.Services.Implementations;
 using Application.Services.Interfaces;
 using Infrastructure.Persistence;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -21,6 +22,10 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+var dbContext =  app.Services.GetService<DevFreelaDbContext>();
+dbContext.Database.OpenConnection();
+
 
 app.UseHttpsRedirection();
 
