@@ -1,12 +1,12 @@
 using Application.InputModels.User;
-using Application.Services.Implementations;
+using Application.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
 namespace EcommerceAPI.Controllers;
 
-public class UsersController(UserService userService) : ControllerBase
+public class UsersController(IUserService userService) : ControllerBase
 {
-  private readonly UserService _userService = userService;
+  private readonly IUserService _userService = userService;
 
   [HttpGet]
   public IActionResult Get(string query)

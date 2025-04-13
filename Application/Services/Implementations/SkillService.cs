@@ -37,7 +37,7 @@ public class SkillService(DevFreelaDbContext dbContext) : ISkillService
         skill.Update(model.Id, model.Description);
         _dbContext.Update(skill);
     }
-
+ 
     public int Create(CreateSkillInputModel model)
     {
         Skill skill = new (model.Description);

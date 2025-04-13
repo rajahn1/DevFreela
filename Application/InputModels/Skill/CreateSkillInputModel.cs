@@ -2,6 +2,6 @@ namespace Application.InputModels.Skill;
 
 public class CreateSkillInputModel(string description, int id)
 {
-    public int Id { get; set; }
-    public string Description { get; set; }
+    public int Id { get; set; } = id;
+    public string Description { get; set; } = description;
 }

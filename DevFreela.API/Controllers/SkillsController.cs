@@ -1,5 +1,6 @@
 using Application.InputModels.Skill;
 using Application.Services.Implementations;
+using Application.Services.Interfaces;
 using Domain.Entities;
 using Microsoft.AspNetCore.Mvc;
 
@@ -7,9 +8,9 @@ namespace EcommerceAPI.Controllers;
 
 [ApiController]
 [Route("api/[controller]")]
-public class SkillsController(SkillService skillService) : Controller
+public class SkillsController(ISkillService skillService) : ControllerBase
 {
-    private readonly SkillService  _skillService = skillService;
+    private readonly ISkillService  _skillService = skillService;
     
     [HttpGet]
     public IActionResult Get(string query)
