@@ -14,7 +14,10 @@ builder.Services.AddScoped<IUserService,UserService>();
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-builder.Services.AddDbContext<DevFreelaDbContext>(options => options.UseNpgsql(connString));
+builder.Services.AddDbContext<DevFreelaDbContext>(options =>
+{
+    options.UseNpgsql(connString, b => b.MigrationsAssembly("Infrastructure"));
+});
 
 var app = builder.Build();
 

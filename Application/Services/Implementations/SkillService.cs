@@ -42,6 +42,7 @@ public class SkillService(DevFreelaDbContext dbContext) : ISkillService
     {
         Skill skill = new (model.Description);
         _dbContext.Skills.Add(skill);
+        _dbContext.SaveChanges();
         return skill.Id;
     }
 }
