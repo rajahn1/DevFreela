@@ -20,7 +20,7 @@ public class SkillService(DevFreelaDbContext dbContext) : ISkillService
     {
         var skill = _dbContext.Skills.FirstOrDefault(s => s.Id == id);
         if (skill == null) throw new KeyNotFoundException(); 
-        return new SkillDetailsViewModel(skill.Description, skill.Id);
+        return new SkillDetailsViewModel(skill.Id, skill.Description);
     }
 
     public void Delete(int id)

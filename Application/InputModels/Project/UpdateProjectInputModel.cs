@@ -3,10 +3,10 @@ using Domain.Enums;
 
 namespace Application.InputModels;
 
-public class UpdateProjectInputModel
+public class UpdateProjectInputModel(int id, string description, string title, decimal totalCost)
 {
-    public int Id { get; set; } 
-    public string Description { get;  set; }
-    public string Title { get; set; }
-    public decimal TotalCost { get; set; }
+    public int Id { get; set; } = id;
+    public string Description { get;  set; } = description;
+    public string Title { get; set; } = title;
+    public decimal TotalCost { get; set; } = totalCost;
 }

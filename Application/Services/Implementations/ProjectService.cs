@@ -38,6 +38,7 @@ public class ProjectService(DevFreelaDbContext dbContext): IProjectService
         Project project = new (model.Title,model.Description, model.TotalCost, model.IdClient, model.IdFreelancer);
             
         _dbContext.Projects.Add(project);
+        _dbContext.SaveChanges();
         
         return project.Id;
     }

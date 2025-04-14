@@ -4,6 +4,8 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace EcommerceAPI.Controllers;
 
+[ApiController]
+[Route("api/[controller]")]
 public class UsersController(IUserService userService) : ControllerBase
 {
   private readonly IUserService _userService = userService;

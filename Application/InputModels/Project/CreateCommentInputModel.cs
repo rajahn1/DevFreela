@@ -1,9 +1,8 @@
 namespace Application.InputModels;
 
-public class CreateCommentInputModel
+public class CreateCommentInputModel(string content, int idUser, int idProject)
 {
-    public required string Content { get; set; }
-    public int IdUser { get; set; }
-    public int IdProject { get; set; }
-    
+    public required string Content { get; set; } = content;
+    public int IdUser { get; set; } = idUser;
+    public int IdProject { get; set; } = idProject;
 }

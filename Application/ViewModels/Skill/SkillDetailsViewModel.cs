@@ -1,7 +1,7 @@
 namespace Application.ViewModels.Skill;
 
-public class SkillDetailsViewModel(string description, int id)
+public class SkillDetailsViewModel(int id, string description)
 {
-    public int Id { get; private set; } = id;
+    public int Id { get; set; } = id;
     public string Description { get; set; } = description;
 }

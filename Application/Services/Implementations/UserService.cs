@@ -34,6 +34,7 @@ public class UserService(DevFreelaDbContext dbContext) : IUserService
     {
         User user = new(model.Fullname, model.Email,model.Birthdate);
         _dbContext.Users.Add(user);
+        _dbContext.SaveChanges();
         return user.Id;
     }
 
