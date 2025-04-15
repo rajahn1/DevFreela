@@ -19,8 +19,6 @@ public class DevFreelaDbContext : DbContext
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         base.OnModelCreating(modelBuilder);
-        modelBuilder.Entity<Category>()
-            .HasKey(c => c.Id);
         modelBuilder.Entity<Project>()
             .HasKey(p => p.Id);
         modelBuilder.Entity<Project>()
@@ -37,6 +35,17 @@ public class DevFreelaDbContext : DbContext
             
         modelBuilder.Entity<ProjectComment>()
             .HasKey(p => p.Id);
+
+        modelBuilder.Entity<ProjectComment>()
+            .HasOne(p => p.Project)
+            .WithMany(p => p.Comments)
+            .HasForeignKey(p => p.IdProject);
+        
+        modelBuilder.Entity<ProjectComment>()
+            .HasOne(p => p.User)
+            .WithMany(p => p.Comments)
+            .HasForeignKey(p => p.IdUser);
+        
         modelBuilder.Entity<Skill>()
             .HasKey(p => p.Id);;
         
@@ -45,9 +54,11 @@ public class DevFreelaDbContext : DbContext
 
         modelBuilder.Entity<User>()
             .HasMany(u => u.Skills)
-            .WithOne();
+            .WithOne()
+            .HasForeignKey(u => u.IdUser)
+            .OnDelete(DeleteBehavior.Restrict);
         
         modelBuilder.Entity<UserSkill>()
-            .HasKey(p => p.Id);;
+            .HasKey(p => p.Id);
     }
 }

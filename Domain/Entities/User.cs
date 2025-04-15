@@ -10,6 +10,7 @@ public class User(string fullName, string email, DateTime birthDate) : BaseEntit
     public bool Active { get; set; } = false;
     public List<Project> OwnedProjects { get; private set; } = [];
     public List<Project> FreelanceProjects { get; private set; } = [];
+    public List<ProjectComment> Comments { get; private set; } = [];
 
     public void Update(string fullname, bool active)
     {
