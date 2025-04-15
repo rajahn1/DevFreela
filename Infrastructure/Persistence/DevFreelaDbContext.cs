@@ -1,3 +1,4 @@
+using System.Reflection;
 using Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Design;
@@ -18,47 +19,6 @@ public class DevFreelaDbContext : DbContext
     public DbSet<ProjectComment> ProjectComments { get; set; }
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-        base.OnModelCreating(modelBuilder);
-        modelBuilder.Entity<Project>()
-            .HasKey(p => p.Id);
-        modelBuilder.Entity<Project>()
-            .HasOne(p => p.Freelancer)
-            .WithMany(f => f.FreelanceProjects)
-            .HasForeignKey(p => p.IdFreelancer)
-            .OnDelete(DeleteBehavior.Restrict);
-        
-        modelBuilder.Entity<Project>()
-            .HasOne(p => p.Client)
-            .WithMany(f => f.OwnedProjects)
-            .HasForeignKey(p => p.IdClient)
-            .OnDelete(DeleteBehavior.Restrict);
-            
-        modelBuilder.Entity<ProjectComment>()
-            .HasKey(p => p.Id);
-
-        modelBuilder.Entity<ProjectComment>()
-            .HasOne(p => p.Project)
-            .WithMany(p => p.Comments)
-            .HasForeignKey(p => p.IdProject);
-        
-        modelBuilder.Entity<ProjectComment>()
-            .HasOne(p => p.User)
-            .WithMany(p => p.Comments)
-            .HasForeignKey(p => p.IdUser);
-        
-        modelBuilder.Entity<Skill>()
-            .HasKey(p => p.Id);;
-        
-        modelBuilder.Entity<User>()
-            .HasKey(p => p.Id);;
-
-        modelBuilder.Entity<User>()
-            .HasMany(u => u.Skills)
-            .WithOne()
-            .HasForeignKey(u => u.IdUser)
-            .OnDelete(DeleteBehavior.Restrict);
-        
-        modelBuilder.Entity<UserSkill>()
-            .HasKey(p => p.Id);
+        modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
     }
 }
