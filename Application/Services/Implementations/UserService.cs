@@ -9,38 +9,38 @@ namespace Application.Services.Implementations;
 
 public class UserService(DevFreelaDbContext dbContext) : IUserService
 {
-    private readonly DevFreelaDbContext _dbContext = dbContext;
     public List<UserViewModel> GetAll()
     {
-        var users = _dbContext.Users;
+        var users = dbContext.Users;
         return users.Select(u => new UserViewModel(u.Id, u.FullName, u.Email)).ToList();
     }
 
     public UserDetailsViewModel GetUserById(int id)
     {
-        var user = _dbContext.Users.FirstOrDefault(u => u.Id == id);
+        var user = dbContext.Users.FirstOrDefault(u => u.Id == id);
         if (user == null) throw new KeyNotFoundException();
         return new UserDetailsViewModel(user.Id, user.FullName, user.Email,user.BirthDate);
     }
 
     public void Delete(int id)
     {
-        var user = _dbContext.Users.FirstOrDefault(u => u.Id == id);
+        var user = dbContext.Users.FirstOrDefault(u => u.Id == id);
         if (user == null) throw new KeyNotFoundException();
         dbContext.Users.Remove(user);
+        dbContext.SaveChanges();
     }
 
     public int Create(NewUserInputModel model)
     {
         User user = new(model.Fullname, model.Email,model.Birthdate);
-        _dbContext.Users.Add(user);
-        _dbContext.SaveChanges();
+        dbContext.Users.Add(user);
+        dbContext.SaveChanges();
         return user.Id;
     }
 
     public void Update(UpdateUserInputModel model)
     {
-        var user = _dbContext.Users.FirstOrDefault(u => u.Id == model.Id);
+        var user = dbContext.Users.FirstOrDefault(u => u.Id == model.Id);
         if (user == null) throw new KeyNotFoundException();
         user.Update(model.Fullname, model.Active);
         dbContext.Update(user);

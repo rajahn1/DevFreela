@@ -12,7 +12,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace Infrastructure.Migrations
 {
     [DbContext(typeof(DevFreelaDbContext))]
-    [Migration("20250414020906_InitialCreate")]
+    [Migration("20250415003652_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
@@ -24,26 +24,6 @@ namespace Infrastructure.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 63);
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
-
-            modelBuilder.Entity("Domain.Entities.Category", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("integer");
-
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
-
-                    b.Property<DateTime>("CreatedAt")
-                        .HasColumnType("timestamp with time zone");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Category");
-                });
 
             modelBuilder.Entity("Domain.Entities.Project", b =>
                 {
@@ -112,12 +92,11 @@ namespace Infrastructure.Migrations
                     b.Property<int>("IdUser")
                         .HasColumnType("integer");
 
-                    b.Property<int?>("ProjectId")
-                        .HasColumnType("integer");
-
                     b.HasKey("Id");
 
-                    b.HasIndex("ProjectId");
+                    b.HasIndex("IdProject");
+
+                    b.HasIndex("IdUser");
 
                     b.ToTable("ProjectComments");
                 });
@@ -192,14 +171,11 @@ namespace Infrastructure.Migrations
                     b.Property<int>("SkillId")
                         .HasColumnType("integer");
 
-                    b.Property<int?>("UserId")
-                        .HasColumnType("integer");
-
                     b.HasKey("Id");
 
-                    b.HasIndex("SkillId");
+                    b.HasIndex("IdUser");
 
-                    b.HasIndex("UserId");
+                    b.HasIndex("SkillId");
 
                     b.ToTable("UserSkills");
                 });
@@ -225,22 +201,36 @@ namespace Infrastructure.Migrations
 
             modelBuilder.Entity("Domain.Entities.ProjectComment", b =>
                 {
-                    b.HasOne("Domain.Entities.Project", null)
+                    b.HasOne("Domain.Entities.Project", "Project")
                         .WithMany("Comments")
-                        .HasForeignKey("ProjectId");
+                        .HasForeignKey("IdProject")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Domain.Entities.User", "User")
+                        .WithMany("Comments")
+                        .HasForeignKey("IdUser")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Project");
+
+                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("Domain.Entities.UserSkill", b =>
                 {
+                    b.HasOne("Domain.Entities.User", null)
+                        .WithMany("Skills")
+                        .HasForeignKey("IdUser")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
                     b.HasOne("Domain.Entities.Skill", "Skill")
                         .WithMany()
                         .HasForeignKey("SkillId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-
-                    b.HasOne("Domain.Entities.User", null)
-                        .WithMany("Skills")
-                        .HasForeignKey("UserId");
 
                     b.Navigation("Skill");
                 });
@@ -252,6 +242,8 @@ namespace Infrastructure.Migrations
 
             modelBuilder.Entity("Domain.Entities.User", b =>
                 {
+                    b.Navigation("Comments");
+
                     b.Navigation("FreelanceProjects");
 
                     b.Navigation("OwnedProjects");

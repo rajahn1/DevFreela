@@ -43,10 +43,12 @@ public class ProjectsController(IProjectService projectService) : ControllerBase
     [HttpPut]
     public IActionResult Put([FromBody] UpdateProjectInputModel model)
     {
+        var project = _projectService.GetProjectById(model.Id);
         if (model.Description.Length > 200)
         {
             return BadRequest();
         }
+        
         _projectService.Update(model);
         return Ok(model.Id);
     }
